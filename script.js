@@ -229,3 +229,27 @@ function toggleMobileMenu() {
     links.style.gap = '20px';
   }
 }
+
+// Scroll progress bar
+const scrollProgress = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  if (scrollProgress) scrollProgress.style.width = scrolled + '%';
+});
+
+// Newsletter submission
+function handleNewsletterSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  const input = e.target.querySelector('input');
+  btn.textContent = 'JOINING…';
+  setTimeout(() => {
+    btn.textContent = '✓ WELCOME';
+    btn.style.background = '#00f5c8';
+    input.value = '';
+    input.placeholder = 'Registration complete.';
+    input.disabled = true;
+  }, 1500);
+}

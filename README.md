@@ -13,8 +13,11 @@ NovaMind is a cutting-edge research institute website designed at the intersecti
 ## ✨ Features
 
 - **🚀 Interactive Hero Background**: A high-performance HTML5 Canvas animation that visualizes neural pathways.
+- **📈 Scroll Progress Indicator**: A subtle, glassmorphism progress bar at the top of the viewport tracking your reading progress.
 - **🎨 Premium Design Aesthetics**: Using a sophisticated dark theme with glassmorphism, fluid typography (Syne & DM Sans), and a custom vibrant accent palette (`#00f5c8`).
 - **🧬 SVG Neural Visuals**: Intricate, animated SVG illustrations representing neural networks and synaptic connections.
+- **📚 Scientific Publications**: A dedicated grid showcasing recent breakthroughs with links to research papers.
+- **📩 Frontier Newsletter**: A custom-designed subscription module with real-time interaction states.
 - **✨ Micro-animations**:
   - Smooth scroll reveal animations for every section.
   - Custom interactive cursor and trail effect.
