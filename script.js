@@ -1,4 +1,8 @@
-// Custom cursor
+// Hide system cursor and enable custom cursor
+document.body.style.cursor = 'none';
+const interactiveElements = 'a, button, input, textarea, .pub-item, .service-card, .team-card';
+document.querySelectorAll(interactiveElements).forEach(el => el.style.cursor = 'none');
+
 const cursor = document.getElementById('cursor');
 const trail = document.getElementById('cursor-trail');
 let mx = 0, my = 0, tx = 0, ty = 0;
@@ -213,20 +217,12 @@ function handleSubmit(e) {
   }, 1500);
 }
 
+
 // Mobile menu
 function toggleMobileMenu() {
   const links = document.querySelector('.nav-links');
   if (links) {
-    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
-    links.style.flexDirection = 'column';
-    links.style.position = 'fixed';
-    links.style.top = '70px';
-    links.style.left = '0';
-    links.style.right = '0';
-    links.style.background = 'rgba(3,7,18,0.98)';
-    links.style.padding = '24px';
-    links.style.borderBottom = '1px solid rgba(0,245,200,0.1)';
-    links.style.gap = '20px';
+    links.classList.toggle('nav-active');
   }
 }
 

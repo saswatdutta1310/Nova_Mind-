@@ -17,7 +17,7 @@ body {
   color: var(--text);
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
-  cursor: none;
+  cursor: default;
 }
 
 /* CUSTOM CURSOR */
@@ -84,7 +84,7 @@ nav.scrolled { padding: 16px 60px; }
   border-radius: 4px;
   font-family: 'Space Mono', monospace;
   font-size: 12px;
-  cursor: none;
+  cursor: default;
   transition: all 0.3s;
   letter-spacing: 1px;
 }
@@ -185,7 +185,7 @@ nav.scrolled { padding: 16px 60px; }
   font-family: 'Space Mono', monospace;
   font-size: 13px; font-weight: 700;
   letter-spacing: 1px;
-  cursor: none;
+  cursor: default;
   transition: all 0.3s;
   position: relative; overflow: hidden;
 }
@@ -206,7 +206,7 @@ nav.scrolled { padding: 16px 60px; }
   border-radius: 4px;
   font-family: 'Space Mono', monospace;
   font-size: 13px;
-  cursor: none;
+  cursor: default;
   transition: all 0.3s;
   letter-spacing: 1px;
 }
@@ -325,7 +325,7 @@ section { padding: 120px 60px; }
   border: none;
   transition: all 0.4s ease;
   position: relative; overflow: hidden;
-  cursor: none;
+  cursor: default;
 }
 .service-card::before {
   content: '';
@@ -391,7 +391,7 @@ section { padding: 120px 60px; }
 .research-item {
   padding: 28px 32px;
   border-left: 1px solid var(--border);
-  cursor: none;
+  cursor: default;
   transition: all 0.3s;
   position: relative;
 }
@@ -430,7 +430,7 @@ section { padding: 120px 60px; }
   padding: 32px 24px;
   text-align: center;
   transition: all 0.4s;
-  cursor: none;
+  cursor: default;
   position: relative; overflow: hidden;
 }
 .team-card::after {
@@ -494,7 +494,7 @@ section { padding: 120px 60px; }
   font-family: 'DM Sans', sans-serif; font-size: 15px;
   transition: border-color 0.3s;
   outline: none; resize: none;
-  cursor: none;
+  cursor: default;
 }
 .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
   border-color: var(--accent);
@@ -609,19 +609,7 @@ body::after {
 /* MOBILE NAV */
 .nav-toggle { display: none; }
 
-@media (max-width: 900px) {
-  nav { padding: 20px 24px; }
-  nav.scrolled { padding: 14px 24px; }
-  .nav-links, .nav-cta-wrap { display: none; }
-  .nav-toggle { display: block; background: none; border: none; color: var(--text); font-size: 22px; cursor: pointer; }
-  section { padding: 80px 24px; }
-  .stats-bar { padding: 40px 24px; }
-  .about-grid, .research-content, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-  .form-row { grid-template-columns: 1fr; }
-}
+
 
 /* SCROLL PROGRESS */
 #scroll-progress {
@@ -642,7 +630,7 @@ body::after {
   align-items: center;
   gap: 40px;
   transition: all 0.4s ease;
-  cursor: none;
+  cursor: default;
 }
 .pub-item:hover { background: rgba(0,245,200,0.03); }
 .pub-meta { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 2px; }
@@ -680,7 +668,7 @@ body::after {
   flex: 1; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
   padding: 18px 24px; border-radius: 4px; color: var(--text);
   font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.3s;
-  cursor: none;
+  cursor: default;
 }
 .newsletter-form input:focus { border-color: var(--accent); }
 .newsletter-form button {
@@ -696,6 +684,35 @@ body::after {
 .newsletter-card:hover .newsletter-visual { opacity: 0.6; grayscale: 0; }
 
 @media (max-width: 900px) {
+  nav { padding: 20px 24px; }
+  nav.scrolled { padding: 14px 24px; }
+  .nav-links.nav-active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(3,7,18,0.98);
+    padding: 40px 24px;
+    border-bottom: 1px solid var(--border);
+    gap: 30px;
+    height: auto;
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+  }
+  .nav-links.nav-active li { opacity: 1; transform: none; }
+  .nav-links, .nav-cta-wrap { display: none; }
+  .nav-toggle { display: block; background: none; border: none; color: var(--text); font-size: 22px; cursor: pointer; }
+  section { padding: 80px 24px; }
+  .stats-bar { padding: 40px 24px; }
+  .about-grid, .research-content, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .form-row { grid-template-columns: 1fr; }
+  
+  /* Publications & Newsletter Responsive */
   .pub-item { grid-template-columns: 1fr; gap: 16px; }
   .pub-link { justify-self: start; }
   .newsletter-card { grid-template-columns: 1fr; }
@@ -703,3 +720,5 @@ body::after {
   .newsletter-content { padding: 60px 24px; }
   .newsletter-form { flex-direction: column; }
 }
+
+
