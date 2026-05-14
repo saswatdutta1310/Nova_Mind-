@@ -8,6 +8,8 @@ NovaMind is a cutting-edge research institute website designed at the intersecti
 
 > **"Decoding the Human Mind through Artificial Intelligence"**
 
+Deployed Link - https://novathink-nine.vercel.app/
+
 ---
 
 ## ✨ Features
